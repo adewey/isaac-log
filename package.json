@@ -1,16 +1,16 @@
 {
-  "name": "isaactracker-log",
+  "name": "isaac-log",
   "description": "The Binding of Isaac: Rebirth log reader and event emitter for Node.js",
-  "version": "1.0.0",
-  "homepage": "https://github.com/adewey/isaactracker-log",
+  "version": "1.0.2",
+  "homepage": "https://github.com/adewey/isaac-log",
   "author": {
-    "name": "ditheren",
-    "email": "isaactracker@rehtid.com"
+    "name": "dither/en",
+    "email": "isaac@rehtid.com"
   },
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adewey/isaactracker-log.git"
+    "url": "https://github.com/adewey/isaac-log.git"
   },
   "engines": {
     "node": ">=0.3.0"
