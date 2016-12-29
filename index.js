@@ -20,11 +20,15 @@ var important_lines = [
             */
             var boss_name = raw[1];
             // ignore some unneeded rooms
+            // this needs some rework if we decide to use this for anything
             if (boss_name.match(/[Rr]oom/) ||
                 boss_name.match(/[Cc]opy/) ||
+                boss_name.match(/\(t\)/) ||
                 boss_name.match(/[Ss]hop/) ||
                 boss_name.match(/[Rr]ush/) ||
                 boss_name.match(/0x0/) ||
+                boss_name.match(/LBR medium/) ||
+                boss_name.match(/use burnt basement/) ||
                 !boss_name) {
                 return;
             }
@@ -47,43 +51,46 @@ var important_lines = [
             /* data:
                 floor - integer - Floor Progress
                 stage - integer - Stage ID from stages.xml
-                stage_type - integer - Stage Type 0 = vanilla 1 = wotl
+                stage_type - integer - Stage Type 0 = vanilla 1 = wotl 2 = rebirth 3 = afterbirth
             */
             var floor = Number(raw[1]);
             var stage_type = Number(raw[2]);
             var stage = 0;
-            switch (floor)
-            {
+
+            if (stage_type == 3) {
+                // NOTE(ditheren): greed floors are stage_type == 3, floors are in the stages.xml as 19 - 25 (or floor + 18)
+                stage = floor + 18;
+            }
+            else {
+                switch (floor)
+                {
                 case 1:
                 case 2:
                     stage = 1 + stage_type;
                     break;
                 case 3:
                 case 4:
-                    stage = 3 + stage_type;
+                    stage = 4 + stage_type;
                     break;
                 case 5:
                 case 6:
-                    stage = 5 + stage_type;
+                    stage = 7 + stage_type;
                     break;
                 case 7:
                 case 8:
-                    stage = 7 + stage_type;
+                    stage = 10 + stage_type;
                     break;
                 case 9:
                 case 10:
-                    stage = 9 + stage_type;
+                    stage = 14 + stage_type;
                     break;
                 case 11:
                 case 12:
-                    stage = 11 + stage_type;
+                    stage = 16 + stage_type;
                     break;
+                }
             }
 
-            // NOTE(ditheren): darkroom/cath are passed as floor # 11 skipping floor 10 completely. normalize this
-            if (floor > 10) {
-                floor--;
-            }
             ee.emit("levelEvent", raw, floor, stage, stage_type);
         },
     }, {
