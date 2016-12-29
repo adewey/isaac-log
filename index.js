@@ -79,11 +79,6 @@ var important_lines = [
                 stage = 11 + stage_type;
                 break;
             }
-
-            // NOTE(ditheren): darkroom/cath are passed as floor # 11 skipping floor 10 completely. normalize this
-            if (floor > 10) {
-                floor--;
-            }
             ee.emit("levelEvent", raw, floor, stage, stage_type);
         },
     }, {
@@ -164,7 +159,7 @@ case "darwin":
 var Carrier, tailStream;
 module.exports.start = function() {
     if (tailStream != undefined) {
-        return console.error("already started. call isaactracker.restart() to restart from the beginning of the file");
+        return console.error("already started. call restart to restart from the beginning of the file");
     }
     if (!fs.existsSync(logfile_path + logfile_name)) {
         return console.error("logpath [" + logfile_path + "] not set properly. call logpath to set your isaac save folder")
