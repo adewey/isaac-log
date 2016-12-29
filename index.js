@@ -54,30 +54,30 @@ var important_lines = [
             var stage = 0;
             switch (floor)
             {
-                case 1:
-                case 2:
-                    stage = 1 + stage_type;
-                    break;
-                case 3:
-                case 4:
-                    stage = 3 + stage_type;
-                    break;
-                case 5:
-                case 6:
-                    stage = 5 + stage_type;
-                    break;
-                case 7:
-                case 8:
-                    stage = 7 + stage_type;
-                    break;
-                case 9:
-                case 10:
-                    stage = 9 + stage_type;
-                    break;
-                case 11:
-                case 12:
-                    stage = 11 + stage_type;
-                    break;
+            case 1:
+            case 2:
+                stage = 1 + stage_type;
+                break;
+            case 3:
+            case 4:
+                stage = 3 + stage_type;
+                break;
+            case 5:
+            case 6:
+                stage = 5 + stage_type;
+                break;
+            case 7:
+            case 8:
+                stage = 7 + stage_type;
+                break;
+            case 9:
+            case 10:
+                stage = 9 + stage_type;
+                break;
+            case 11:
+            case 12:
+                stage = 11 + stage_type;
+                break;
             }
 
             // NOTE(ditheren): darkroom/cath are passed as floor # 11 skipping floor 10 completely. normalize this
