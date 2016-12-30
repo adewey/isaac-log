@@ -82,7 +82,7 @@ var important_lines = [
                     break;
                 case 9:
                 case 10:
-                    stage = 14 + stage_type;
+                    stage = 13 + stage_type;
                     break;
                 case 11:
                 case 12:
