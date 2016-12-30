@@ -1,5 +1,5 @@
 # isaac-log
-The Binding of Isaac: Rebirth log reader and event emitter for Node.js
+The Binding of Isaac: Afterbirth log reader and event emitter for Node.js
 
 simply load the plugin and subscribe to events:
 ```

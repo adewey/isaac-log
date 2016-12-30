@@ -158,20 +158,20 @@ function getUserHome() {
 switch(os.platform())
 {
 case "win32":
-    logfile_path = getUserHome() + "/Documents/My Games/Binding of Isaac Rebirth/";
+    logfile_path = getUserHome() + "/Documents/My Games/Binding of Isaac Afterbirth/";
     break;
 case "linux":
-    logfile_path = getUserHome() + "/.local/share/binding of isaac rebirth/";
+    logfile_path = getUserHome() + "/.local/share/binding of isaac afterbirth/";
     break;
 case "darwin":
-    logfile_path = getUserHome() + "/Library/Application Support/Binding of Isaac Rebirth/";
+    logfile_path = getUserHome() + "/Library/Application Support/Binding of Isaac Afterbirth/";
     break;
 }
 
 var Carrier, tailStream;
 module.exports.start = function() {
     if (tailStream != undefined) {
-        return console.error("already started. call isaactracker.restart() to restart from the beginning of the file");
+        return console.error("already started. call restart to restart from the beginning of the file");
     }
     if (!fs.existsSync(logfile_path + logfile_name)) {
         return console.error("logpath [" + logfile_path + "] not set properly. call logpath to set your isaac save folder")
