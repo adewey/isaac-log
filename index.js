@@ -45,8 +45,8 @@ var important_lines = [
             ee.emit("roomEndEvent", raw, game_time);
         },
     }, {
-        //Level Initialization                    Level::Init m_Stage 6, m_AltStage 1
-        'regex': /Level::Init m_Stage (\d+), m_AltStage (\d+)/,
+        //Level Initialization                    Level::Init m_Stage 1, m_StageType 3 Seed 2545532756
+        'regex': /Level::Init m_Stage (\d+), m_StageType (\d+) Seed \d+/,
         "event": function levelEvent (raw) {
             /* data:
                 floor - integer - Floor Progress
